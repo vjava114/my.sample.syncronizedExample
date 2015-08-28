@@ -1,4 +1,9 @@
-
+/**
+ * 
+ * @author kang
+ *	- 로직 설명 - 
+ *	1. 사람 3명이 SdkMini.java 쓰레드를 동시에 수행시킨다
+ */
 public class People  extends Thread{
 
 	
