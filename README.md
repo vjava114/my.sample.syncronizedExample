@@ -1,8 +1,8 @@
 # my.sample.syncronizedExample
 
 
-플래그값 	public static boolean ISSEND = false; 가 thread safe 하지 않게 작동하는 모습과,
-syncronized 를 이용하여 해결하는 모습을 확인하는 예제입니다.
+#플래그값 	public static boolean ISSEND = false; 가 thread safe 하지 않게 작동하는 모습과,
+syncronized 를 이용하여 해결하는 모습을 확인하는 예제입니다.#
 
 SdkMini.java
 - 로직 설명 - 
