@@ -47,13 +47,16 @@ public class SdkMini {
 	}
 	
 	
-	public static synchronized void sendServer(Loc loc) throws InterruptedException{
+	public static void sendServer(Loc loc) throws InterruptedException{
 		
-		if(!ISSEND){
-			new Thread().sleep(1000);	// 알수없는 지연사유 발생..
-			ISSEND = true;
-			System.out.println("     <<< "+loc+" 정보 전송 성공! >>>");
+		synchronized (People.class){
+			if(!ISSEND){
+				new Thread().sleep(1000);	// 알수없는 지연사유 발생..
+				ISSEND = true;
+				System.out.println("     <<< "+loc+" 정보 전송 성공! >>>");
+			}
 		}
+		
 	}
 	
 }
