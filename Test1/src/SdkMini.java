@@ -63,24 +63,24 @@ public class SdkMini {
 		/*
 		 *  case 1 : 동기화 처리 되지 않았을 경우, 여러개의 쓰레드가 동시에 아래를 수행 해 버리게 된다.
 		 */
-		if(!ISSEND){
-			new Thread().sleep(1000);	// 알수없는 지연사유 발생..   
-			System.out.println("     <<< "+loc+" 정보 전송 성공! >>>");
-			ISSEND = true;
-		}
+//		if(!ISSEND){
+//			new Thread().sleep(1000);	// 알수없는 지연사유 발생..   
+//			System.out.println("     <<< "+loc+" 정보 전송 성공! >>>");
+//			ISSEND = true;
+//		}
 		
 		
 		
 		/*
 		 *  case 2 : 동기화 처리 하여 ISSEND 가 false 인지 검사하는 로직을 차례로 수행 하도록 하여, 한번에 1개씩만 수행하도록 한다.
 		 */
-//		synchronized (People.class){
-//			if(!ISSEND){
-//				new Thread().sleep(1000);	// 알수없는 지연사유 발생.. 
-//				System.out.println("     <<< "+loc+" 정보 전송 성공! >>>");
-//				ISSEND = true;
-//			}
-//		}
+		synchronized (People.class){
+			if(!ISSEND){
+				new Thread().sleep(1000);	// 알수없는 지연사유 발생.. 
+				System.out.println("     <<< "+loc+" 정보 전송 성공! >>>");
+				ISSEND = true;
+			}
+		}
 		
 	}
 	
